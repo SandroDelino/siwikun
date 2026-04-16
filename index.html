@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For My Love</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- 🌸 SAKURA BACKGROUND -->
+<div class="flower-bg">
+  <span class="sakura s1"></span>
+  <span class="sakura s2"></span>
+  <span class="sakura s3"></span>
+  <span class="sakura s4"></span>
+  <span class="sakura s5"></span>
+  <span class="sakura s6"></span>
+  <span class="sakura s7"></span>
+  <span class="sakura s8"></span>
+  <span class="sakura s9"></span>
+</div>
+
+<!-- Halaman Awal -->
+<div class="page content active" id="page1">
+  <h1>Hello <br><span>My Love!</span></h1>
+  <p>Do you want to see your gift?</p>
+  <div class="buttons">
+    <button onclick="showPage('page3')">YES PLEASE</button>
+    <button onclick="showPage('page2')">NO THANKS</button>
+  </div>
+</div>
+
+<!-- Halaman Kedua -->
+<div class="page content" id="page2">
+  <h1>I promise you'll like it</h1>
+  <button onclick="showPage('page3')">TRY AGAIN</button>
+</div>
+
+<!-- Halaman Gift -->
+<div class="page content" id="page3">
+  <h2>THESE ARE FOR YOU!</h2>
+  <div class="gift-grid">
+    <div class="gift-card" onclick="showPage('galleryPage')">📷</div>
+    <div class="gift-card" onclick="showPage('flowerPage')">💐</div>
+    <div class="gift-card" onclick="showPage('musicPage')">🎵</div>
+    <div class="gift-card" onclick="showPage('letterPage')">💌</div>
+  </div>
+</div>
+
+<!-- Gallery -->
+<div class="page content" id="galleryPage">
+  <h2>Captured Memories 📸</h2>
+  <div class="gallery-grid">
+    <div class="photo-card">
+      <img src="foto/1.jpeg">
+      <p>olahraga ni yee wwkk</p>
+    </div>
+    <div class="photo-card">
+      <img src="foto/2.jpeg">
+      <p>photobooth pertamaa</p>
+    </div>
+    <div class="photo-card">
+      <img src="foto/3.jpeg">
+      <p>bro like the rolling stones ahaha</p>
+    </div>
+    <div class="photo-card">
+      <img src="foto/4.jpeg">
+      <p>gemasss</p>
+    </div>
+    <div class="photo-card">
+      <img src="foto/4.jpeg">
+      <p>gemasss</p>
+    </div>
+    <div class="photo-card">
+      <img src="foto/4.jpeg">
+      <p>gemasss</p>
+    </div>
+  </div>
+  <button onclick="showPage('page3')">Back</button>
+</div>
+
+<!-- Flower -->
+<div class="page content" id="flowerPage">
+  <h2>Flowers For You 🌷</h2>
+
+  <div class="special-card flower-scene">
+    <div class="tulip">
+      <div class="stem"></div>
+      <div class="leaf leaf-left"></div>
+      <div class="leaf leaf-right"></div>
+      <div class="petal-back-left"></div>
+      <div class="petal-back-right"></div>
+      <div class="petal petal-left"></div>
+      <div class="petal petal-center"></div>
+      <div class="petal petal-right"></div>
+    </div>
+    <!-- <p>This luxurious tulip blooms only for you ❤️</p> -->
+  </div>
+
+  <button onclick="showPage('page3')">Back</button>
+</div>
+
+<!-- Music -->
+<div class="page content" id="musicPage">
+  <h2>Your Favorite Song 🎶</h2>
+  <div class="special-card">
+    <p>This song is for you ❤️</p>
+
+<a href="https://youtu.be/kE25Y8e0RUo" target="_blank">
+  ▶️ Play Our Song ❤️
+</a>
+
+  </div>
+  <button onclick="showPage('page3')">Back</button>
+</div>
+
+<!-- Letter -->
+<div class="page content" id="letterPage">
+  <h2>A Letter For You 💌</h2>
+  <div class="special-card">
+    <p>
+      Thank you for being part of my life.<br>
+      Every moment with you is special,<br>
+      and I hope this little gift makes you smile ❤️
+    </p>
+  </div>
+  <button onclick="showPage('page3')">Back</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

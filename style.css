@@ -1,0 +1,411 @@
+/* ======================
+   RESPONSIVE MOBILE
+====================== */
+@media (max-width: 600px) {
+
+  body {
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  p {
+    font-size: 14px;
+  }
+
+  /* BUTTON */
+  button {
+    padding: 10px 18px;
+    font-size: 14px;
+  }
+
+  /* GIFT GRID jadi 1 kolom */
+  .gift-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gift-card {
+    width: 100%;
+    height: 80px;
+    font-size: 30px;
+  }
+
+  /* GALLERY jadi 1 kolom */
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* CARD */
+  .special-card {
+    max-width: 100%;
+    padding: 15px;
+  }
+
+  /* FLOWER */
+  .tulip {
+    transform: scale(0.8);
+  }
+
+  .flower-scene {
+    height: auto;
+    padding: 20px 0;
+  }
+
+  /* VIDEO */
+  video {
+    width: 100%;
+    height: auto;
+  }
+}
+
+
+/* ======================
+   BASE
+====================== */
+
+body {
+  margin: 0;
+  font-family: 'Comic Sans MS', cursive;
+
+  /* gradient romantic */
+  background: linear-gradient(
+    135deg,
+    #fff0f4,
+    #ffe4ec,
+    #ffd6e0
+  );
+
+  background-attachment: fixed;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  color: #7a0019;
+  overflow-x: hidden;
+}
+
+/* supaya konten di atas sakura */
+.content {
+  position: relative;
+  z-index: 2;
+}
+
+.page {
+  display: none;
+  text-align: center;
+  width: 90%;
+  max-width: 700px;
+}
+
+.page.active {
+  display: block;
+}
+
+h1 span, h2 {
+  color: #b3002d;
+}
+
+/* ======================
+   BUTTON
+====================== */
+button {
+  margin: 10px;
+  padding: 12px 24px;
+  border: 2px solid #7a0019;
+  border-radius: 25px;
+  background: white;
+  color: #7a0019;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #7a0019;
+  color: white;
+}
+
+/* ======================
+   GIFT MENU
+====================== */
+.gift-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 120px);
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.gift-card {
+  height: 100px;
+  border: 3px solid #7a0019;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+  cursor: pointer;
+  background: white;
+  transition: 0.3s;
+}
+
+.gift-card:hover {
+  transform: scale(1.05);
+  background: #ffe6ec;
+}
+
+/* ======================
+   GALLERY
+====================== */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 180px);
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.photo-card {
+  background: white;
+  border: 3px solid #7a0019;
+  border-radius: 12px;
+  padding: 10px;
+  box-shadow: 3px 3px 10px rgba(0,0,0,0.15);
+  transition: 0.3s;
+}
+
+.photo-card:hover {
+  transform: scale(1.05);
+  background: #fff0f4;
+}
+
+.photo-card img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.photo-card p {
+  margin-top: 8px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* ======================
+   SPECIAL CARD
+====================== */
+.special-card {
+  margin-top: 20px;
+  padding: 20px;
+  border: 3px solid #7a0019;
+  border-radius: 15px;
+  background: white;
+  max-width: 350px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 3px 3px 12px rgba(0,0,0,0.15);
+}
+
+/* ======================
+   TULIP FLOWER (UPGRADE)
+====================== */
+.flower-scene {
+  height: 420px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tulip {
+  position: relative;
+  width: 180px;
+  height: 300px;
+}
+
+/* batang */
+.stem {
+  position: absolute;
+  bottom: 0;
+  left: 85px;
+  width: 12px;
+  height: 0;
+  background: linear-gradient(to top, #2e7d32, #66bb6a);
+  border-radius: 10px;
+  animation: growStem 1.5s forwards;
+}
+
+/* daun */
+.leaf {
+  position: absolute;
+  width: 60px;
+  height: 28px;
+  background: linear-gradient(to right, #43a047, #81c784);
+  border-radius: 50%;
+  opacity: 0;
+  animation: showLeaf 1s forwards;
+}
+
+.leaf-left {
+  bottom: 100px;
+  left: 25px;
+  transform: rotate(-35deg);
+  animation-delay: 1.2s;
+}
+
+.leaf-right {
+  bottom: 140px;
+  left: 95px;
+  transform: rotate(35deg);
+  animation-delay: 1.5s;
+}
+
+/* petals */
+.petal {
+  position: absolute;
+  width: 55px;
+  height: 85px;
+  background: linear-gradient(to bottom, #ff85a2, #d81b60);
+  border-radius: 60% 60% 45% 45%;
+  opacity: 0;
+  transform: scale(0);
+  animation: bloom 0.8s forwards;
+}
+
+.petal-left {
+  top: 55px;
+  left: 38px;
+  transform: rotate(-25deg) scale(0);
+  animation-delay: 1.8s;
+}
+
+.petal-center {
+  top: 35px;
+  left: 63px;
+  width: 60px;
+  height: 95px;
+  background: linear-gradient(to bottom, #ffb3c7, #ec407a);
+  z-index: 2;
+  animation-delay: 2s;
+}
+
+.petal-right {
+  top: 55px;
+  left: 88px;
+  transform: rotate(25deg) scale(0);
+  animation-delay: 2.2s;
+}
+
+/* glow */
+.tulip::after {
+  content: "";
+  position: absolute;
+  top: 20px;
+  left: 40px;
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(circle, rgba(255,182,193,0.35), transparent 70%);
+  border-radius: 50%;
+  opacity: 0;
+  animation: glowIn 1s forwards;
+  animation-delay: 2.2s;
+}
+
+/* ======================
+   SAKURA BACKGROUND
+====================== */
+.flower-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.sakura {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+
+  background: radial-gradient(circle, #ffb3c7 30%, #ff4d6d);
+  border-radius: 50%;
+
+  opacity: 0.9;
+
+  animation: fall linear infinite;
+
+  /* glow biar keliatan */
+  box-shadow: 0 0 10px rgba(255, 105, 135, 0.7);
+}
+
+/* bentuk kelopak */
+.sakura::before,
+.sakura::after {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  background: inherit;
+  border-radius: 50%;
+}
+
+.sakura::before { transform: rotate(45deg); }
+.sakura::after { transform: rotate(-45deg); }
+
+/* posisi */
+.s1 { left: 10%; animation-duration: 8s; }
+.s2 { left: 20%; animation-duration: 10s; }
+.s3 { left: 35%; animation-duration: 12s; }
+.s4 { left: 50%; animation-duration: 9s; }
+.s5 { left: 65%; animation-duration: 11s; }
+.s6 { left: 75%; animation-duration: 13s; }
+.s7 { left: 85%; animation-duration: 10s; }
+.s8 { left: 45%; animation-duration: 14s; }
+.s9 { left: 60%; animation-duration: 9s; }
+
+/* ======================
+   ANIMATION
+====================== */
+@keyframes growStem {
+  from { height: 0; }
+  to { height: 190px; }
+}
+
+@keyframes showLeaf {
+  from { opacity: 0; transform: scale(0); }
+  to { opacity: 1; }
+}
+
+@keyframes bloom {
+  from { opacity: 0; transform: scale(0); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes glowIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* sakura jatuh */
+@keyframes fall {
+  0% {
+    top: -50px;
+    transform: translateX(0) rotate(0deg) scale(0.8);
+    opacity: 0;
+  }
+  20% { opacity: 0.7; }
+  50% { transform: translateX(30px) rotate(180deg) scale(1); }
+  100% {
+    top: 110%;
+    transform: translateX(-30px) rotate(360deg) scale(0.8);
+    opacity: 0;
+  }
+}
