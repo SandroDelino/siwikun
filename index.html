@@ -21,6 +21,11 @@
   <span class="sakura s9"></span>
 </div>
 
+  <!-- 🎵 MUSIC -->
+<audio id="bg-music" loop>
+  <source src="Ada titik-titik di ujung doa - Sal Priadi _ Lirik Lagu.mp3" type="audio/mpeg">
+</audio>
+
 <!-- Halaman Awal -->
 <div class="page content active" id="page1">
   <h1>Hello <br><span>My Love!</span></h1>
@@ -127,6 +132,43 @@
   </div>
   <button onclick="showPage('page3')">Back</button>
 </div>
+
+  <script>
+
+/* pindah halaman */
+function showPage(pageId) {
+  document.querySelectorAll('.page').forEach(p => {
+    p.classList.remove('active');
+  });
+
+  document.getElementById(pageId).classList.add('active');
+}
+
+/* 🎵 START MUSIC */
+let musicStarted = false;
+
+function startMusic() {
+  if (musicStarted) return;
+
+  const music = document.getElementById("bg-music");
+
+  music.volume = 0;
+  music.play();
+
+  let vol = 0;
+  const fade = setInterval(() => {
+    if (vol < 0.5) {
+      vol += 0.02;
+      music.volume = vol;
+    } else {
+      clearInterval(fade);
+    }
+  }, 200);
+
+  musicStarted = true;
+}
+
+</script>
 
 <script src="script.js"></script>
 </body>
